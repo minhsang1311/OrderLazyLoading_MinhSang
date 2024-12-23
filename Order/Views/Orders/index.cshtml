@@ -1,0 +1,25 @@
+@model List<EFCoreSQLiteDemo.Models.ViewModels.OrderViewModel>
+
+<h1>Orders</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Order ID</th>
+        <th>User</th>
+        <th>Order Date</th>
+        <th>Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var order in Model)
+    {
+        <tr>
+            <td>@order.OrderId</td>
+            <td>@order.UserName</td>
+            <td>@order.OrderDate</td>
+            <td><a href="/Orders/Details/@order.OrderId">View Details</a></td>
+        </tr>
+    }
+    </tbody>
+</table>

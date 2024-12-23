@@ -1,0 +1,27 @@
+@model EFCoreSQLiteDemo.Models.ViewModels.OrderViewModel
+
+<h1>Order Details</h1>
+
+<p><b>Order ID:</b> @Model.OrderId</p>
+<p><b>User:</b> @Model.UserName</p>
+<p><b>Order Date:</b> @Model.OrderDate</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var detail in Model.Details)
+    {
+        <tr>
+            <td>@detail.ProductName</td>
+            <td>@detail.Quantity</td>
+            <td>@detail.UnitPrice</td>
+        </tr>
+    }
+    </tbody>
+</table>
